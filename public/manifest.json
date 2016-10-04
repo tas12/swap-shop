@@ -1,0 +1,7 @@
+{
+  "name": "Wittr",
+  "scope": "/",
+  "icons": [],
+  "display": "standalone",
+  "start_url": "/"
+}

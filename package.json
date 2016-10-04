@@ -1,0 +1,24 @@
+{
+  "name": "swap-shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon lib/server.js",
+    "sass:watch": "sass --watch sass/main.scss:public/build/main.css",
+    "watch": "webpack --watch & npm run sass:watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^1.13.2"
+  },
+  "dependencies": {
+    "handlebars": "^4.0.5",
+    "hapi": "^15.0.3",
+    "inert": "^4.0.2",
+    "path": "^0.12.7",
+    "vision": "^4.1.0"
+  }
+}

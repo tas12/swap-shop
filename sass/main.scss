@@ -1,0 +1,29 @@
+$pink: orange;
+
+@import "partials/header.scss";
+@import "partials/toast.scss";
+
+.hide {
+  display: none;
+}
+
+button[name='save'] {
+}
+
+video {
+  width: 400px;
+  height: 300px;
+  border: 1px solid orange;
+}
+
+#canvas {
+  border: 1px solid pink;
+}
+
+/* w3schools navbar */
+
+body {
+  background-color: $pink;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}

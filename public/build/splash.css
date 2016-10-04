@@ -1,0 +1,30 @@
+body {
+  background-color: #00bcd4; }
+
+h1 {
+  font-family: 'Bangers', Helvetica;
+  font-size: 4rem;
+  color: #fffffe;
+  letter-spacing: 0.2rem; }
+
+button {
+  font-family: Helvetica;
+  background-color: transparent;
+  border: 2px solid #fffffe;
+  color: #fffffe;
+  border-radius: 0.7rem;
+  padding: 18px 20px;
+  font-size: 2rem; }
+
+.content {
+  width: 80%;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center; }
+
+/*# sourceMappingURL=splash.css.map */

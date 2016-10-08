@@ -1,4 +1,4 @@
-const myCache = 'swap-shop-17'
+const myCache = 'swap-shop-19'
 //fsf
 self.addEventListener('install', (_event) => {
   _event.waitUntil(

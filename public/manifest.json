@@ -1,7 +1,10 @@
 {
-  "name": "Wittr",
+  "name": "SwapShop",
+  "short_name": "SwapShop",
   "scope": "/",
   "icons": [],
   "display": "standalone",
+  "background_color": "#00bcd4",
+  "theme_color": "#00bcd4",
   "start_url": "/"
 }

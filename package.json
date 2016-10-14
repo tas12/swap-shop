@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server",
     "start": "nodemon lib/server.js",
     "sass:watch": "sass --watch sass/main.scss:public/build/main.css",
     "watch": "webpack --watch & npm run sass:watch"
@@ -26,6 +27,7 @@
     "lodash": "^4.16.4",
     "path": "^0.12.7",
     "pg": "^6.1.0",
+    "riot": "^2.6.3",
     "shortid": "^2.2.6",
     "vision": "^4.1.0"
   }

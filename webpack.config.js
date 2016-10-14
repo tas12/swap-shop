@@ -1,21 +1,24 @@
 const path = require('path')
 
 module.exports = {
-  entry: {
-    add: './public/script.js',
-    store: './public/store.js',
-  },
+  entry: path.join(__dirname, 'public', 'riot-script.js'),
   output: {
     path: path.join(__dirname, 'public', 'output'),
-    filename: '[name]-bundle.js'
+    filename: 'riot-bundle.js'
   },
   module: {
     loaders: [{
       test: /\.js$/,
       loader: 'babel-loader',
+      exclude: /node_modules/,
       query: {
         presets: ['es2015']
       }
+    },
+    {
+      test: /\.tag$/,
+      loader: 'tag',
+      exclude: /node_modules/
     }]
   }
 }

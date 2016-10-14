@@ -1,4 +1,4 @@
-$pink: orange;
+$blue: #00bcd4;
 
 @import "partials/header.scss";
 @import "partials/toast.scss";
@@ -23,7 +23,12 @@ video {
 /* w3schools navbar */
 
 body {
-  background-color: $pink;
+  background-color: #FAFAFA;
   margin: 0;
   font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1px;
 }

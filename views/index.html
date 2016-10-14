@@ -1,7 +1,21 @@
+<h1>What's in store</h1>
+<div class="flex-container store">
+  {{#each images}}
+  <div class="flex-item">
+    <img
+      class="images"
+      src={{this}}
+      style="width:90%; min-width:100px, min-height:90px; background-color: white;"  />
+  </div>
+  {{/each}}
 
-<video autoplay></video>
-<canvas id="canvas" class="hide" width="400"></canvas>
-<button name="capture">Take photo</button>
-<button class="hide" name="save">Save</button>
-<button class="hide" name="cancel">Cancel</button>
-<img src="" alt="" />
+  <div class="flex-item images" style="display: none;">
+    <img
+      src=""
+      style="width:90%; min-width:100px, min-height:90px; background-color: white;" />
+  </div>
+</div>
+
+{{#each scripts}}
+<script type="text/javascript" src={{this}} defer></script>
+{{/each}}

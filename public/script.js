@@ -11,39 +11,47 @@ const DOM = {
 const { canvas, video, captureButton, saveButton, openMenuButton, closeMenuButton, navbar } = DOM
 let dataURL
 
-openMenuButton.addEventListener('click', (e) => {
-  e.preventDefault()
-  navbar.style.height = '100%'
-})
+if (openMenuButton) {
+  openMenuButton.addEventListener('click', (e) => {
+    e.preventDefault()
+    navbar.style.height = '100%'
+  })
+}
 
-closeMenuButton.addEventListener('click', (e) => {
-  e.preventDefault()
-  navbar.style.height = '0%'
-})
+if (closeMenuButton) {
+  closeMenuButton.addEventListener('click', (e) => {
+    e.preventDefault()
+    navbar.style.height = '0%'
+  })
+}
 
-captureButton.addEventListener('click', () => {
-  captureButton.disabled = true
-  canvas.classList = ''
-  canvas.width = video.scrollWidth
-  canvas.height = video.scrollHeight
-  video.classList.add('hide')
-  canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height)
-  dataURL = canvas.toDataURL('image/png')
-  saveButton.classList = ''
-})
+if (captureButton) {
+  captureButton.addEventListener('click', () => {
+    captureButton.disabled = true
+    canvas.classList = ''
+    canvas.width = video.scrollWidth
+    canvas.height = video.scrollHeight
+    video.classList.add('hide')
+    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height)
+    dataURL = canvas.toDataURL('image/png')
+    saveButton.classList = ''
+  })
+}
 
-saveButton.addEventListener('click', () => {
-  const xhr = new XMLHttpRequest()
-  xhr.onreadystatechange = () => {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      console.log(xhr.response)
+if (saveButton) {
+  saveButton.addEventListener('click', () => {
+    const xhr = new XMLHttpRequest()
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        console.log(xhr.response)
+      }
     }
-  }
-  xhr.open('POST', '/save')
-  xhr.send(JSON.stringify({
-    dataURL
-  }))
-})
+    xhr.open('POST', '/save')
+    xhr.send(JSON.stringify({
+      dataURL
+    }))
+  })
+}
 
 const config = {
   video: {
@@ -56,8 +64,6 @@ const config = {
   audio: false,
 }
 
-console.log(config)
-
 const success = (stream) => {
   window.stream = stream
   video.srcObject = stream
@@ -67,4 +73,5 @@ const fail = (error) => {
   console.log('navigator.getUserMedia() error: ', error)
 }
 
-navigator.mediaDevices.getUserMedia(config).then(success).catch(fail)
+if (video)
+  navigator.mediaDevices.getUserMedia(config).then(success).catch(fail)

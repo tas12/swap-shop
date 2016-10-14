@@ -1,9 +1,21 @@
 const path = require('path')
 
 module.exports = {
-  entry: './public/script.js',
+  entry: {
+    add: './public/script.js',
+    store: './public/store.js',
+  },
   output: {
     path: path.join(__dirname, 'public', 'output'),
-    filename: 'bundle.js'
+    filename: '[name]-bundle.js'
+  },
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      loader: 'babel-loader',
+      query: {
+        presets: ['es2015']
+      }
+    }]
   }
 }

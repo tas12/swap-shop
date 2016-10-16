@@ -1,10 +1,10 @@
 const path = require('path')
 
 module.exports = {
-  entry: path.join(__dirname, 'public', 'riot-script.js'),
+  entry: ['./public/tags/js/sample.js', './public/tags/js/add.js'],
   output: {
     path: path.join(__dirname, 'public', 'output'),
-    filename: 'riot-bundle.js'
+    filename: '[name]-bundle.js'
   },
   module: {
     loaders: [{

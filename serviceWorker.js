@@ -1,4 +1,4 @@
-const myCache = 'swap-shop-4'
+const myCache = 'swap-shop-5'
 //fsf
 self.addEventListener('install', (_event) => {
   _event.waitUntil(
@@ -11,7 +11,9 @@ self.addEventListener('install', (_event) => {
           'public/output/store-bundle.js',
           'public/adapter.js',
           'public/swReg.js',
-          'public/manifest.json'
+          'public/manifest.json',
+          'public/riot.min.js',
+          'public/output/main-bundle.js'
         ])
       })
       .catch((err) => {

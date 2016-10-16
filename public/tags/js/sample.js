@@ -1,11 +1,6 @@
-<sample>
-  <h1>What's in store</h1>
-  <div class="flex-item" each="{img in img_arr}">
-    <img riot-src="{img}">
-  </div>
-  <p> {offline} </p>
+riot.tag2('sample', '<h1>What\'s in store</h1> <div class="flex-item" each="{img in img_arr}"> <img riot-src="{img}"> </div> <p> {offline} </p>', '', '', function(opts) {
+    var self = this
 
-  <script>
     fetch('/data')
       .then((res) => {
         return res.json()
@@ -17,5 +12,4 @@
         console.log(err)
         self.update({ offline: 'you are offline' })
       })
-  </script>
-</sample>
+});

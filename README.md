@@ -19,6 +19,10 @@ A single page progressive web app using service worker. Still under development.
 
 `npm start`
 
+## Installation on mobile device
+
+You can add this app to your android device. Just follow the instructions [here](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/)!
+
 
 ## Wireframes
 

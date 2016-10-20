@@ -37,3 +37,16 @@ You can add this app to your android device. Just follow the instructions [here]
 ![](wireframes/wireframes-2.png)
 ![](wireframes/wireframes-3.png)
 ![](wireframes/wireframes-4.png)
+
+## Resources
+
+https://pwa.rocks
+
+https://developers.google.com/web/progressive-web-apps/
+
+https://www.udacity.com/course/offline-web-applications--ud899
+
+https://addyosmani.com/blog/getting-started-with-progressive-web-apps/
+
+https://www.theguardian.com/info/developer-blog/2015/nov/04/building-an-offline-page-for-theguardiancom
+

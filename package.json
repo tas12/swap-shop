@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server",
     "start": "nodemon lib/server.js",
     "sass:watch": "sass --watch sass/main.scss:public/build/main.css",
     "watch": "webpack --watch & npm run sass:watch"
@@ -12,13 +13,24 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "riot-mui": "0.0.17",
+    "riotjs-loader": "^3.0.0",
     "webpack": "^1.13.2"
   },
   "dependencies": {
+    "env2": "^2.1.1",
     "handlebars": "^4.0.5",
     "hapi": "^15.0.3",
     "inert": "^4.0.2",
+    "knex": "^0.12.5",
+    "lodash": "^4.16.4",
     "path": "^0.12.7",
+    "pg": "^6.1.0",
+    "riot": "^2.6.3",
+    "shortid": "^2.2.6",
     "vision": "^4.1.0"
   }
 }

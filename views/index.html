@@ -1,7 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#00bcd4">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="public/manifest.json">
+    <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+    <link rel="stylesheet" href="public/build/main.css">
+    <link href="public/build/riot-mui.min.css" rel="stylesheet">
+    <title>SwapShop</title>
+  </head>
+  <body>
+    <header>
+      {{{header}}}
+    </header>
+    <app></app>
+    <div class="toast" style="display:none">
+      <p>
+        update available
+      </p>
+      <a href="/" id="refresh">whatever</a>
+    </div>
 
-<video autoplay></video>
-<canvas id="canvas" class="hide" width="400"></canvas>
-<button name="capture">Take photo</button>
-<button class="hide" name="save">Save</button>
-<button class="hide" name="cancel">Cancel</button>
-<img src="" alt="" />
+    <script type="text/javascript" src="public/swReg.js"></script>
+    <script type="text/javascript" src="public/adapter.js"></script>
+    <script type="text/javascript" src="public/output/index-bundle.js"></script>
+  </body>
+</html>

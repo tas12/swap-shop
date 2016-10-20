@@ -1,3 +1,6 @@
+#openMenuButton {
+  color: #00bcd4; }
+
 .overlay {
   height: 0%;
   width: 100%;
@@ -78,8 +81,17 @@ video {
 
 /* w3schools navbar */
 body {
-  background-color: orange;
+  background-color: #FAFAFA;
   margin: 0;
   font-family: 'Lato', sans-serif; }
+
+h1 {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1px; }
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; }
 
 /*# sourceMappingURL=main.css.map */

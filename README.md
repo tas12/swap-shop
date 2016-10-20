@@ -15,7 +15,7 @@ A single page progressive web app using service worker. Still under development.
 
 `npm i`
 
-Create a config.env file and add:
+Create a config.env file in the root directory and add:
 ```
 DB_HOST=localhost
 DB_USER=[your database username]

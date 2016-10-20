@@ -5,8 +5,13 @@
   <button class="hide" name="saveButton" onclick={save}>Save</button>
   <button class="hide" name="cancelButton">Cancel</button>
   <img src="" alt="" />
+  <material-input placeholder="Item name"></material-input>
+  <material-input placeholder="Description"></material-input>
+  <material-input placeholder="Size"></material-input>
+  <material-input placeholder="Colour"></material-input>
 
   <script>
+    let dataURL
     this.capture = () => {
       this.captureButton.disabled = true
       this.canvas.classList = ''
@@ -33,7 +38,7 @@
 
     const config = {
       video: {
-        width: 400,
+        width: document.body.clientWidth,
         height: 300,
         facingMode: {
           ideal: 'environment'

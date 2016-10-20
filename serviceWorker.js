@@ -1,5 +1,5 @@
-const myCache = 'swap-shop-5'
-//fsf
+const myCache = 'swap-shop-7'
+//fsfkjj
 self.addEventListener('install', (_event) => {
   _event.waitUntil(
     caches.open(myCache)
@@ -7,13 +7,11 @@ self.addEventListener('install', (_event) => {
         return cache.addAll([
           '/shell',
           'public/build/main.css',
-          'public/output/add-bundle.js',
-          'public/output/store-bundle.js',
           'public/adapter.js',
           'public/swReg.js',
           'public/manifest.json',
-          'public/riot.min.js',
-          'public/output/main-bundle.js'
+          'public/output/index-bundle.js',
+          'public/build/riot-mui.min.css'
         ])
       })
       .catch((err) => {
@@ -38,11 +36,12 @@ self.addEventListener('activate', (_event) => {
 })
 
 self.addEventListener('fetch', (_event) => {
+  const paths = ['/', '/shop', '/add', '/about', '/account']
   const requestUrl = new URL(_event.request.url)
-  console.log(requestUrl);
+  console.log(requestUrl.pathname, '<<<req url pathname');
   console.log(requestUrl.origin, location.origin);
   if (requestUrl.origin === location.origin) {
-    if (requestUrl.pathname === '/') {
+    if (paths.indexOf(requestUrl.pathname) > -1) {
       _event.respondWith(caches.match('/shell'))
       return
     }

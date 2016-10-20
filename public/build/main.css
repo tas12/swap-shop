@@ -89,4 +89,9 @@ h1 {
   font-family: 'Bangers', cursive;
   letter-spacing: 1px; }
 
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; }
+
 /*# sourceMappingURL=main.css.map */

@@ -1,4 +1,4 @@
-# SwapShop
+# Swap Shop
 
 A single page progressive web app using service worker. Still under development.
 

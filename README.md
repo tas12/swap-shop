@@ -15,6 +15,13 @@ A single page progressive web app using service worker. Still under development.
 
 `npm i`
 
+Create a config.env file and add:
+```
+DB_HOST=localhost
+DB_USER=[your database username]
+DB_NAME=[your database name]
+```
+
 `postgres -D /usr/local/var/postgres`
 
 `npm start`

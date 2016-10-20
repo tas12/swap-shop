@@ -5,7 +5,7 @@ A single page progressive web app using service worker. Still under development.
 ## Stack
 
 + Node
-+ Riot
++ Riot + Riot Material UI
 + Handlebars
 + Postgres
 

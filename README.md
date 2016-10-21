@@ -28,7 +28,7 @@ DB_NAME=[your database name]
 
 ## Installation on mobile device
 
-You can add this app to your android device. Just follow the instructions [here](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/)! Then add the app to your homescreen for that PWA experience.
+Make sure you have the server running. Then you can add this app to your android device. Just follow the instructions [here](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/)! After that, add to your homescreen to get a full screen app
 
 
 ## Wireframes

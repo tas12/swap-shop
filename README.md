@@ -1,6 +1,6 @@
 # Swap Shop
 
-A single page progressive web app using service worker. Still under development.
+A single page progressive web app using service worker and WebRTC. Still under development.
 
 ## Stack
 

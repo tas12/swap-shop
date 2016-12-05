@@ -1,4 +1,4 @@
-const myCache = 'swap-shop-3'
+const myCache = 'swap-shop-6'
 
 self.addEventListener('install', (_event) => {
   _event.waitUntil(

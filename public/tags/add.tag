@@ -1,14 +1,49 @@
 <add>
   <video id="video" autoplay></video>
-  <canvas id="canvas" class="hide" width="400"></canvas>
-  <button name="captureButton" onclick={capture}>Take photo</button>
-  <button class="hide" name="saveButton" onclick={save}>Save</button>
+  <canvas id="canvas" class="hide"></canvas>
+  <theme-button id="captureButton" text="Take photo" onclick={capture}></theme-button>
   <button class="hide" name="cancelButton">Cancel</button>
-  <img src="" alt="" />
-  <material-input placeholder="Item name"></material-input>
-  <material-input placeholder="Description"></material-input>
-  <material-input placeholder="Size"></material-input>
-  <material-input placeholder="Colour"></material-input>
+  <div class="inputContent">
+    <material-input label="Item name"></material-input>
+    <material-input label="Description"></material-input>
+    <material-input label="Size"></material-input>
+    <material-input label="Colour"></material-input>
+  </div>
+  <theme-button class="hide" id="saveButton" text="Save" onclick={save}>Save</theme-button>
+
+
+  <style>
+    video, canvas {
+      display: block;
+      margin: 0 auto;
+      /*width: 400px;*/
+      max-width: 100%;
+    }
+
+    video {
+      border: 1px solid orange;
+    }
+
+    canvas {
+      border: 1px solid pink;
+    }
+
+    material-input {
+      display: block;
+      width: 450px;
+      max-width: 90%;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .inputContent input {
+      font-size: 1em;
+    }
+
+    .inputContent label {
+      color: #717373;
+    }
+  </style>
 
   <script>
     let dataURL
@@ -38,8 +73,8 @@
 
     const config = {
       video: {
-        width: document.body.clientWidth,
-        height: 300,
+        maxWidth: '640',
+        maxHeight: '480',
         facingMode: {
           ideal: 'environment'
         },

@@ -1,5 +1,5 @@
-const myCache = 'swap-shop-2'
-//fsfkjj
+const myCache = 'swap-shop-3'
+
 self.addEventListener('install', (_event) => {
   _event.waitUntil(
     caches.open(myCache)

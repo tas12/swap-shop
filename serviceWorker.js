@@ -1,5 +1,5 @@
-const myCache = 'swap-shop-7'
-//fsfkjj
+const myCache = 'swap-shop-3'
+
 self.addEventListener('install', (_event) => {
   _event.waitUntil(
     caches.open(myCache)
@@ -21,7 +21,6 @@ self.addEventListener('install', (_event) => {
 })
 
 self.addEventListener('activate', (_event) => {
-  console.log(_event)
   _event.waitUntil(
     caches.keys().then(keys => {
       return Promise.all(
@@ -38,8 +37,6 @@ self.addEventListener('activate', (_event) => {
 self.addEventListener('fetch', (_event) => {
   const paths = ['/', '/shop', '/add', '/about', '/account']
   const requestUrl = new URL(_event.request.url)
-  console.log(requestUrl.pathname, '<<<req url pathname');
-  console.log(requestUrl.origin, location.origin);
   if (requestUrl.origin === location.origin) {
     if (paths.indexOf(requestUrl.pathname) > -1) {
       _event.respondWith(caches.match('/shell'))
@@ -49,15 +46,16 @@ self.addEventListener('fetch', (_event) => {
 
   _event.respondWith(
     caches.match(_event.request).then((response) => {
-      console.log(_event.request, response, 'RESPONSE');
       return response || fetch(_event.request)
     }).catch(err => console.log('ERROR', err))
   )
 })
 
 self.addEventListener('message', (_event) => {
-  if (_event.data.action === 'skip waiting')
+  if (_event.data.action === 'skip waiting') {
     self.skipWaiting()
+
+  }
 })
 
 self.addEventListener('controllerchange', () => {

@@ -2,10 +2,29 @@
   <div id="spinner">
     <material-spinner></material-spinner>
   </div>
-  <div class="flex-item" each="{img in img_arr}" style="max-width: 85%;">
-    <img riot-src="{img}" style="width: 100%; margin: 0px 0px 10px 0px;">
+  <div class="flex-container">
+    <div class="flex-item" each="{img in img_arr}">
+      <img riot-src="{img}" style="width: 100%;">
+    </div>
   </div>
   <p> {offline} </p>
+
+  <style>
+    .flex-item {
+      margin: 0px 10px 20px 10px;
+      width: 350px;
+      max-width: 95%;
+      height: auto;
+      display: inherit;
+    }
+
+    .flex-container {
+      display: inline-block;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+
+  </style>
 
   <script>
     const self = this

@@ -16,7 +16,6 @@ if (navigator.serviceWorker) {
       }
 
       if (reg.installing) {
-        console.log('update in progress')
         reg.installing.addEventListener('statechange', () => {
           if (this.state === 'installed') {
             document.querySelector('.toast').style.display = ''

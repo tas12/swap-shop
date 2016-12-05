@@ -8,7 +8,9 @@
     "dev": "webpack-dev-server",
     "start": "node lib/server.js",
     "startmon": "nodemon lib/server.js",
+    "sass:build": "sass sass/main.scss:public/build/main.css",
     "sass:watch": "sass --watch sass/main.scss:public/build/main.css",
+    "build": "webpack & npm run sass:build",
     "watch": "webpack --watch & npm run sass:watch"
   },
   "author": "",

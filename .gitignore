@@ -5,5 +5,5 @@ npm-debug.log
 lib/img
 **/*.map
 config.env
-public/build/main.*
-public/output/*
+public/style/build/main.css
+public/js/build/

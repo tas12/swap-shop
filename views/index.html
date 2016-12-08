@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="public/manifest.json">
     <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
-    <link rel="stylesheet" href="public/build/main.css">
-    <link href="public/build/riot-mui.min.css" rel="stylesheet">
+    <link href="public/style/riot-mui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="public/style/build/main.css">
     <title>SwapShop</title>
   </head>
   <body>
@@ -15,15 +15,11 @@
       {{{header}}}
     </header>
     <app></app>
-    <div class="toast" style="display:none">
-      <p>
-        update available
-      </p>
-      <a href="/" id="refresh">whatever</a>
-    </div>
+    {{{toast}}}
 
-    <script type="text/javascript" src="public/swReg.js"></script>
-    <script type="text/javascript" src="public/adapter.js"></script>
-    <script type="text/javascript" src="public/output/index-bundle.js"></script>
+
+    <script type="text/javascript" src="public/js/swReg.js"></script>
+    <script type="text/javascript" src="public/js/adapter.js"></script>
+    <script type="text/javascript" src="public/js/build/bundle.js"></script>
   </body>
 </html>

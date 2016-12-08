@@ -1,6 +1,6 @@
 const riot = require('riot')
 require('riot-mui')
-require('./tags/app.tag')
+require('../tags/app.tag')
 
 riot.mount('*')
 

@@ -5,21 +5,21 @@ riot.route.stop()
 riot.route.start(true)
 
 riot.route('/', () => {
-  riot.mount('#content', 'sample')
+  riot.mount('#content', 'shop')
 })
 
 riot.route('/shop', () => {
-  riot.mount('#content', 'sample')
+  riot.mount('#content', 'shop')
 })
 
 riot.route('/add', () => {
-  riot.mount('#content', 'add')
+  riot.mount('#content', 'add-item')
 })
 
 riot.route('/about', () => {
-  riot.mount('#content', '<h2>about<h2>')
+  riot.mount('#content', 'about')
 })
 
 riot.route('/account', () => {
-  riot.mount('#content', '<h2>account<h2>')
+  riot.mount('#content', 'account')
 })

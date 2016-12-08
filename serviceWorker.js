@@ -1,4 +1,4 @@
-const myCache = 'swap-shop-6'
+const myCache = 'swap-shop-5'
 
 self.addEventListener('install', (_event) => {
   _event.waitUntil(
@@ -6,12 +6,12 @@ self.addEventListener('install', (_event) => {
       .then((cache) => {
         return cache.addAll([
           '/shell',
-          'public/build/main.css',
-          'public/adapter.js',
-          'public/swReg.js',
+          'public/style/build/main.css',
+          'public/js/adapter.js',
+          'public/js/swReg.js',
           'public/manifest.json',
-          'public/output/index-bundle.js',
-          'public/build/riot-mui.min.css'
+          'public/js/build/bundle.js',
+          'public/style/riot-mui.min.css'
         ])
       })
       .catch((err) => {

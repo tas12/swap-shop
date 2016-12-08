@@ -1,58 +1,35 @@
-$blue: #00bcd4;
-
-#openMenuButton {
-  color: $blue;
-}
-
-.overlay {
-  height: 0%;
-  width: 100%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.9);
-  overflow-y: hidden;
-  transition: 0.5s;
-}
-
-.overlay-content {
-  position: relative;
-  top: 25%;
-  width: 100%;
+material-navbar {
+  background: $blue;
+  font-family: 'Bangers';
   text-align: center;
-  margin-top: 30px;
-}
+  height: 60px;
 
-.overlay a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 36px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
+  .logo {
+    height: inherit;
 
-.overlay a:hover, .overlay a:focus {
-  color: #f1f1f1;
-}
-
-.overlay #closeMenuButton {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
-}
-
-@media screen and (max-height: 450px) {
-  .overlay {overflow-y: auto;}
-  .overlay a {font-size: 20px}
-  .overlay #closeMenuButton {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
+    a {
+      text-decoration: none;
+      font-size: 1.8em;
+    }
   }
 }
 
-/* end w3schools navbar */
+navigation {
+  header {
+    display: inline-flex;
+    width: 100%;
+
+    menu-item {
+      width: 25%;
+      line-height: 50px;
+
+      div {
+        text-align: center
+      }
+
+      a {
+        text-decoration: none
+      }
+    }
+  }
+}

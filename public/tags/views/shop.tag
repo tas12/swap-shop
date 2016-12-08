@@ -1,4 +1,4 @@
-<sample>
+<shop>
   <div id="spinner">
     <material-spinner></material-spinner>
   </div>
@@ -43,4 +43,4 @@
         self.update({ offline: 'you are offline' })
       })
   </script>
-</sample>
+</shop>

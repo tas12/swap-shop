@@ -1,8 +1,8 @@
-require('./add.tag')
-require('./sample.tag')
-require('./menu.tag')
-require('./theme-button.tag')
+require('./views/shop.tag')
+require('./views/add-item.tag')
+require('./views/account.tag')
+require('./views/about.tag')
 
-<app class="">
+<app class="app">
   <div id="content" class=""></div>
 </app>

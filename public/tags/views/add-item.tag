@@ -1,22 +1,18 @@
-<add>
+require('../form/form.tag')
+require('../theme-button/theme-button.tag')
+
+<add-item>
   <video id="video" autoplay></video>
   <canvas id="canvas" class="hide"></canvas>
   <theme-button id="captureButton" text="Take photo" onclick={capture}></theme-button>
   <button class="hide" name="cancelButton">Cancel</button>
-  <div class="inputContent">
-    <material-input label="Item name"></material-input>
-    <material-input label="Description"></material-input>
-    <material-input label="Size"></material-input>
-    <material-input label="Colour"></material-input>
-  </div>
+  <form />
   <theme-button class="hide" id="saveButton" text="Save" onclick={save}>Save</theme-button>
-
 
   <style>
     video, canvas {
       display: block;
       margin: 0 auto;
-      /*width: 400px;*/
       max-width: 100%;
     }
 
@@ -28,21 +24,6 @@
       border: 1px solid pink;
     }
 
-    material-input {
-      display: block;
-      width: 450px;
-      max-width: 90%;
-      margin: 0 auto;
-      text-align: left;
-    }
-
-    .inputContent input {
-      font-size: 1em;
-    }
-
-    .inputContent label {
-      color: #717373;
-    }
   </style>
 
   <script>
@@ -94,4 +75,4 @@
     navigator.mediaDevices.getUserMedia(config).then(success).catch(fail)
 
   </script>
-</add>
+</add-item>

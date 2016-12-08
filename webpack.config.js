@@ -2,10 +2,10 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
-  entry: './public/index.js',
+  entry: './public/js/index.js',
   output: {
-    path: path.join(__dirname, 'public', 'output'),
-    filename: 'index-bundle.js'
+    path: path.join(__dirname, 'public', 'js', 'build'),
+    filename: 'bundle.js'
   },
   plugins: [
     new webpack.ProvidePlugin({

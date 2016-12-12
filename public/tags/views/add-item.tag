@@ -27,19 +27,26 @@ require('../theme-button/theme-button.tag')
   </style>
 
   <script>
+    const tag = this
     let dataURL
-    this.capture = () => {
-      this.captureButton.disabled = true
-      this.canvas.classList = ''
-      this.canvas.width = this.video.scrollWidth
-      this.canvas.height = this.video.scrollHeight
-      this.video.classList.add('hide')
-      this.canvas.getContext('2d').drawImage(video, 0, 0, this.canvas.width, this.canvas.height)
-      dataURL = this.canvas.toDataURL('image/png')
-      this.saveButton.classList = ''
+    
+    tag.on('before-unmount', () => {
+      if (tag.stream)
+        tag.stream.getTracks().forEach(track => track.stop())
+    })
+
+    tag.capture = () => {
+      tag.captureButton.disabled = true
+      tag.canvas.classList = ''
+      tag.canvas.width = tag.video.scrollWidth
+      tag.canvas.height = tag.video.scrollHeight
+      tag.video.classList.add('hide')
+      tag.canvas.getContext('2d').drawImage(video, 0, 0, tag.canvas.width, tag.canvas.height)
+      dataURL = tag.canvas.toDataURL('image/png')
+      tag.saveButton.classList = ''
     }
 
-    this.save = () => {
+    tag.save = () => {
       const xhr = new XMLHttpRequest()
       xhr.onreadystatechange = () => {
         if (xhr.readyState === 4 && xhr.status === 200) {
@@ -64,8 +71,9 @@ require('../theme-button/theme-button.tag')
     }
 
     const success = (stream) => {
+      tag.stream = stream
       window.stream = stream
-      this.video.srcObject = stream
+      tag.video.srcObject = stream
     }
 
     const fail = (error) => {

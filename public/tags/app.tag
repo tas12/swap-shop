@@ -5,4 +5,5 @@ require('./views/about.tag')
 
 <app class="app">
   <div id="content" class=""></div>
+
 </app>

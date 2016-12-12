@@ -27,20 +27,20 @@
   </style>
 
   <script>
-    const self = this
+    const tag = this
 
     fetch('/data')
       .then((res) => {
         return res.json()
       })
       .then((json) => {
-        self.spinner.style.display = 'none'
-        self.update({ img_arr: json.result })
+        tag.spinner.style.display = 'none'
+        tag.update({ img_arr: json.result })
       })
       .catch((err) => {
-        self.spinner.style.display = 'none'
+        tag.spinner.style.display = 'none'
         console.log(err)
-        self.update({ offline: 'you are offline' })
+        tag.update({ offline: 'you are offline' })
       })
   </script>
 </shop>

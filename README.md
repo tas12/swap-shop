@@ -4,7 +4,7 @@ A single page progressive web app using service worker and WebRTC. Still under d
 
 ## Why
 1. To practice my tech skills and try out Riot.js
-2. To help young people that want to become more concious consumers
+2. To help young people who want to become more concious consumers
 
 ## Stack
 
@@ -18,6 +18,8 @@ A single page progressive web app using service worker and WebRTC. Still under d
 `git clone https://github.com/tas12/swap-shop.git && cd swap-shop`
 
 `npm i`
+
+`npm run build`
 
 Create a config.env file in the root directory and add:
 ```

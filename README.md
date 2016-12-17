@@ -56,3 +56,5 @@ https://addyosmani.com/blog/getting-started-with-progressive-web-apps/
 
 https://www.theguardian.com/info/developer-blog/2015/nov/04/building-an-offline-page-for-theguardiancom
 
+https://cloudfour.com/thinks/designing-responsive-progressive-web-apps/
+

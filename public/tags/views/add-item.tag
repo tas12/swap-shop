@@ -13,7 +13,9 @@ require('../theme-button/theme-button.tag')
     video, canvas {
       display: block;
       margin: 0 auto;
-      max-width: 100%;
+      width: 640px;
+      max-width: 100vw;
+      height: 75vw
     }
 
     video {
@@ -29,7 +31,7 @@ require('../theme-button/theme-button.tag')
   <script>
     const tag = this
     let dataURL
-    
+
     tag.on('before-unmount', () => {
       if (tag.stream)
         tag.stream.getTracks().forEach(track => track.stop())

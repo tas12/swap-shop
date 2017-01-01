@@ -43,4 +43,8 @@ if (navigator.serviceWorker) {
       })
     })
     .catch((err) => console.log('reg err', err))
+
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    window.location.reload()
+  })
 }

@@ -28,6 +28,15 @@
 
   <script>
     const tag = this
+    
+    const store = tag.opts.store
+    tag.state = store.getState()
+
+    tag.on('before-mount', () => {
+      store.dispatch({
+        type: 'RESET_APP_BAR'
+      })
+    })
 
     fetch('/data')
       .then((res) => {

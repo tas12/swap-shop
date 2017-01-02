@@ -5,7 +5,8 @@ require('../../theme-button/theme-button.tag')
   <div>
     <video id="video" autoplay></video>
     <canvas id="canvas" class="hide"></canvas>
-    <theme-button id="captureButton" text={captureText} onclick={toggleCapture}></theme-button>
+    <theme-button id="captureButton" text={state.dataUrl ? 'retake' : 'Take photo'}
+      onclick={state.dataUrl ? retake : capture }></theme-button>
   </div>
 
   <style>
@@ -29,37 +30,44 @@ require('../../theme-button/theme-button.tag')
   <script>
     const tag = this
 
+    const store = tag.opts.store
+    tag.state = store.getState().addViewData
+
+    tag.on('before-mount', () => {
+      store.dispatch({ type: 'SET_CAPTURE_STEP' })
+    })
+
+    store.subscribe(() => {
+      tag.state = store.getState().addViewData
+      tag.update()
+    })
+
     const setCanvasDimensions = () => {
       tag.canvas.width = tag.video.scrollWidth
       tag.canvas.height = tag.video.scrollHeight
     }
 
-    tag.captureText = tag.opts.get_data_url() ? 'retake' : 'Take photo'
-
-    const capture = () => {
-      console.log('ksldscapture');
+    tag.capture = () => {
       tag.canvas.classList = ''
       setCanvasDimensions()
       tag.video.classList.add('hide')
       tag.canvas.getContext('2d').drawImage(video, 0, 0, tag.canvas.width, tag.canvas.height)
-      tag.opts.set_data_url(tag.canvas.toDataURL('image/png', 1))
-      tag.captureText = 'retake'
-      tag.toggleCapture = retake
-      tag.update()
+      store.dispatch({
+        type: 'STORE_DATA_URL',
+        payload: tag.canvas.toDataURL('image/png', 1)
+      })
     }
 
-    const retake = () => {
-      console.log('retlakefl');
+    tag.retake = () => {
       tag.canvas.classList.add('hide')
       tag.canvas.getContext('2d').clearRect(0, 0, tag.canvas.width, tag.canvas.height)
       tag.video.classList.remove('hide')
-      tag.captureText = 'Take photo'
-      tag.toggleCapture = capture
-      tag.update()
-      tag.opts.set_data_url(null)
+      store.dispatch({
+        type: 'RESET_DATA_URL'
+      })
     }
 
-    if (tag.opts.get_data_url()) {
+    if (tag.state.dataUrl) {
       tag.video.onloadedmetadata = () => {
         tag.canvas.classList = ''
         setCanvasDimensions()
@@ -68,16 +76,18 @@ require('../../theme-button/theme-button.tag')
         img.onload = () => {
           tag.canvas.getContext('2d').drawImage(img, 0, 0, tag.canvas.width, tag.canvas.height)
         }
-        img.src = tag.opts.get_data_url()
+        img.src = tag.state.dataUrl
       }
     }
 
     tag.on('before-unmount', () => {
-      if (tag.stream)
-        tag.stream.getTracks().forEach(track => track.stop())
+      if (tag.state.stream) {
+        tag.state.stream.getTracks().forEach(track => track.stop())
+        store.dispatch({
+          type: 'RESET_STREAM'
+        })
+      }
     })
-
-    tag.toggleCapture = tag.opts.get_data_url() ? retake : capture
 
     const config = {
       video: {
@@ -92,8 +102,11 @@ require('../../theme-button/theme-button.tag')
 
     const success = (stream) => {
       tag.stream = stream
-      tag.opts.store_stream(stream)
-      window.stream = stream
+      store.dispatch({
+        type: 'STORE_STREAM',
+        payload: stream
+      })
+      // window.stream = stream
       tag.video.srcObject = stream
     }
 

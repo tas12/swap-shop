@@ -4,22 +4,26 @@ riot.route.base('/')
 riot.route.stop()
 riot.route.start(true)
 
-riot.route('/', () => {
-  riot.mount('#content', 'shop')
-})
+module.exports = (store) => {
 
-riot.route('/shop', () => {
-  riot.mount('#content', 'shop')
-})
+  riot.route('/', () => {
+    riot.mount('#content', 'shop', { store })
+  })
 
-riot.route('/add', () => {
-  riot.mount('#content', 'add-item')
-})
+  riot.route('/shop', () => {
+    riot.mount('#content', 'shop', { store })
+  })
 
-riot.route('/about', () => {
-  riot.mount('#content', 'about')
-})
+  riot.route('/about', () => {
+    riot.mount('#content', 'about', { store })
+  })
 
-riot.route('/account', () => {
-  riot.mount('#content', 'account')
-})
+  riot.route('/account', () => {
+    riot.mount('#content', 'account', { store })
+  })
+
+  riot.route('/messages', () => {
+    riot.mount('#content', 'messages', { store })
+  })
+
+}

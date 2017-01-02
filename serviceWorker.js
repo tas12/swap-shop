@@ -1,4 +1,4 @@
-const myCache = 'swap-shop-6'
+const myCache = 'swap-shop-7'
 
 self.addEventListener('install', (_event) => {
   _event.waitUntil(
@@ -35,7 +35,7 @@ self.addEventListener('activate', (_event) => {
 })
 
 self.addEventListener('fetch', (_event) => {
-  const paths = ['/', '/shop', '/add', '/about', '/account']
+  const paths = ['/', '/shop', '/about', '/messages', '/account']
   const requestUrl = new URL(_event.request.url)
   if (requestUrl.origin === location.origin) {
     if (paths.indexOf(requestUrl.pathname) > -1) {
@@ -56,8 +56,4 @@ self.addEventListener('message', (_event) => {
     self.skipWaiting()
 
   }
-})
-
-self.addEventListener('controllerchange', () => {
-  window.location.reload()
 })

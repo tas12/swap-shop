@@ -9,7 +9,7 @@ A single page progressive web app using service worker and WebRTC. Still under d
 ## Stack
 
 + Node
-+ Riot + Riot Material UI
++ Riot + Riot Material UI + Redux
 + Handlebars
 + Postgres
 

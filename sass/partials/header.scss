@@ -1,8 +1,10 @@
-material-navbar {
-  background: $blue;
-  font-family: 'Bangers';
-  text-align: center;
-  height: 60px;
+app-bar {
+  .header {
+    background-color: $blue;
+    font-family: 'Bangers';
+    text-align: center;
+    height: 60px;
+  }
 
   .logo {
     height: inherit;
@@ -10,6 +12,8 @@ material-navbar {
     a {
       text-decoration: none;
       font-size: 1.8em;
+      color: white;
+      line-height: 60px;
     }
   }
 }
@@ -17,18 +21,18 @@ material-navbar {
 navigation {
   header {
     display: inline-flex;
-    width: 100%;
+    width: 100vw;
 
     menu-item {
       width: 25%;
       line-height: 50px;
 
       div {
-        text-align: center
+        text-align: center;
       }
 
       a {
-        text-decoration: none
+        text-decoration: none;
       }
     }
   }

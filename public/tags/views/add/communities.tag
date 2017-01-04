@@ -2,7 +2,7 @@
   <h3 id="title">Which communities would you like to add your item to?</h3>
   <div class="communities">
     <div each={c in communities}>
-      <material-checkbox name="checker" onclick={() => check(c.name)}>
+      <material-checkbox name="checker">
         <img src={c.logo} alt={c.name}>
       </material-checkbox>
     </div>
@@ -49,7 +49,7 @@
     const tag = this
 
     const store = tag.opts.store
-    console.log(store.getState());
+    tag.state = store.getState().addViewData
 
     tag.on('before-mount', () => {
       store.dispatch({ type: 'SET_COMMUNITIES_STEP' })
@@ -61,22 +61,28 @@
       { name: 'Founders & Coders', logo: 'https://pbs.twimg.com/profile_images/534123785817829376/UE8T_TQF_400x400.png'},
     ]
 
-    let checked = false
-
-    tag.check = (communityName) => {
-      checked = !checked
-      if (checked) {
-        store.dispatch({
-          type: 'ADD_COMMUNITY',
-          payload: communityName
+    tag.on('mount', () => {
+      tag.tags.checker.forEach(el => {
+        if (tag.state.communities.indexOf(el.c.name) > -1) {
+          el.checked = true
+          tag.update()
+        }
+        // toggle is a function defined in material-checkbox source code
+        el.on('toggle', () => {
+          if (el.checked) {
+            store.dispatch({
+              type: 'ADD_COMMUNITY',
+              payload: el.c.name
+            })
+          } else {
+            store.dispatch({
+              type: 'REMOVE_COMMUNITY',
+              payload: el.c.name
+            })
+          }
         })
-      } else {
-        store.dispatch({
-          type: 'REMOVE_COMMUNITY',
-          payload: communityName
-        })
-      }
-    }
+      })
+    })
 
     tag.save = () => {
       const xhr = new XMLHttpRequest()

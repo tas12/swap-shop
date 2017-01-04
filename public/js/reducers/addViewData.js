@@ -25,7 +25,7 @@ module.exports = (state = defaultState, action) => {
     case 'ADD_COMMUNITY':
       return { ...state, communities: [ ...state.communities, action.payload ] }
     case 'REMOVE_COMMUNITY':
-      return { ...state, communities: [ ...state.communities.filter(() => action.payload) ] }
+      return { ...state, communities: [ ...state.communities.filter((el) => el != action.payload) ] }
     case 'RESET_COMMUNITIES':
       return { ...state, communities: defaultState.communities }
     case 'RESET_ADDVIEW_DATA':
